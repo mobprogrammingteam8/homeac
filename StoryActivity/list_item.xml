@@ -9,19 +9,23 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:gravity="center_vertical" >
-        <ImageView
+        android:layout_height="65dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/iv_userimage"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_margin="7.5dp"
-            tools:src="@mipmap/ic_launcher" />
+            android:src="@mipmap/ic_launcher" />
+
         <TextView
             android:id="@+id/tv_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textSize="18dp"
             tools:text="2023.11.05" />
     </LinearLayout>
 
@@ -32,24 +36,22 @@
         android:scaleType="fitXY"
         tools:srcCompat="@drawable/ic_launcher_background" />
 
-    <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="match_parent"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <com.greenfrvr.hashtagview.HashtagView
+            android:id="@+id/tag"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@+id/imageView">
+            app:tagBackground="#323232"
+            app:tagTextColor="#000000"
+            app:tagTextSize="18sp" />
 
-            <TextView
-                android:id="@+id/tv_tag"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:text="태그🏷️"
-                android:textSize="18sp" />
+    </ScrollView>
 
-        </LinearLayout>
+
+
 
     <TextView
         android:id="@+id/tv_text"
